@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- *** Encabezado------- -->
+  	<header class="container-fluid bg-dark text-light">
+    	<div class="container"></div>
+  	</header>
+
+  	<main class="container  my-5">
+    	<div class="row">
+      		<div class="col-md-12">
+        		{% include 'resultados.html' %}
+			</div>
+			<div class="col-md-8">
+				<h3 class="card-title">Tu Fotos:</h3>
+			
+				{% set path = 'static/archivos/' %}
+				{% for foto in list_Photos %}
+				<div class="card mb-3" style="max-width: 540px;">
+					<div class="row g-0">
+					  	<div class="col-md-4">
+							<img src="{{ path }}{{ foto }}" class="img-fluid" alt="{{ foto }}">
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<h4 class="card-title">
+									<span class="index">{{loop.index}}</span>
+								</h4>
+								<p class="card-text">
+									<span class="namePhone">{{ foto }}</span>
+								</p>
+								<section id="btns">
+									<a href="{{ url_for('EliminarFoto', nombreFoto = foto ) }}"  class="btn btn-danger" style="margin-top: 40px;" title="Eliminar Archivo">Eliminar Archivo</a>
+									<a href="{{ url_for('descargar_Archivo', nombreFoto = foto ) }}" class="btn btn-info" style="margin-top: 40px;" title="Descargar Archivo">Descargar Archivo</a>
+								</section>
+							</div>	
+						</div>	
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+				<!-- *** Opciones------- -->
+            <div class="col-md-4">
+                <div class="card p-5">
+                <h2 class="card-title">Instrucciones</h2>
+                    <li class="list-group-item">
+                        <!-- Botón para ver el menú -->
+                        <!-- *** Opciones------- -->
+                        <button id="ver-menu-btn" type="button" class="btn btn-info" >Ver Opciones</button>
+                        <!-- Contenedor del menú inicialmente oculto -->
+                        <div id="menu-container" style="display: none;">
+                            <!-- Contenido del menú -->
+                            <ul>
+                            <li>Selecciona una imagen haciendo clic en el botón "Seleccionar archivo".</li>
+                            <li>Una vez seleccionada la imagen, haz clic en "Cargar y Difuminar".</li>
+                            <li>Los rostros detectados en la imagen se difuminarán automáticamente.</li>
+                            <li>Podrás ver el resultado o descargar la imagen con rostros difuminados.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <button id="ver-contac-us" type="button" class="btn btn-light"><a href="#footer">Contactar con nosotros</a></button>
+                    </li>
+                    
+                        <li class="list-group-item"><a href="#"></a></li>
+                    </ul>
+            </div>
+
+      		</div>
+    	</div>
+  	</main>
+
+	<!-- footer------- -->
+	<footer id="footer">
+	<footer class="container-fluid bg-dark text-light">
+		<h3 class="card-title">¿Dónde estamos?</h3>
+		<div class="container">
+		<div class="divider"></div>
+		<p class="m-0"><strong>Dirección:</strong> Bo. Nuevo, 4, 41012 Sevilla</p>
+		<p class="m-0"><p class="m-0"><strong>Teléfono:</strong> 955 62 ?? ¿¿</p>
+		<p class="m-0"><strong>Provincia </strong>: Sevilla</p>
+		<p class="m-0"><strong>Horario Atención 9:00 a 14:00 y 16:00 a 19:00</strong></p>
+		<hr class="intro-divider">
+		<p class="m-0">© 2024 jmat PIA C.E. A.I. & B. D. Punta del Verde</p>
+		</div>
+	</footer>
+ 
+
+
+{% endblock %}

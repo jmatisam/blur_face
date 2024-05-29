@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difuminador de Rostros</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/B_face.cio.png           ') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+  
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/landing-page.css') }}" rel="stylesheet">
+  
+    <!-- Custom Fonts -->
+    <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+{% block content %}
+    <!-- Contenido específico de cada página -->
+{% endblock %}
+
+
+  <!-- *********Tus scripts JS y otros recursos para el funcionamiento-------- -->
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+	$(document).ready(function(){
+	  // Manejar el envío del formulario de mensaje
+	  $('#message-form').submit(function(event) {
+		event.preventDefault();  // Evitar el comportamiento predeterminado del formulario
+		var message = $('#mensaje').val();  // Obtener el mensaje del campo de entrada
+		sendMessage(message);  // Llamar a la función para enviar el mensaje
+		$('#mensaje').val('');  // Limpiar el campo de entrada después de enviar el mensaje
+	  });
+
+	  // Función para enviar un mensaje al servidor y recibir una respuesta
+	  function sendMessage(message) {
+		$.ajax({
+		  type: 'POST',
+		  url: '/',
+		  data: { message: message },
+		  success: function(response) {
+			// Mostrar la respuesta del servidor en el chat
+			$('#chat-box').append('<p><strong>Tú:</strong> ' + message + '</p>');
+			$('#chat-box').append('<p><strong>OrderBot:</strong> ' + response + '</p>');
+		  },
+		  error: function(error) {
+			console.log('Error:', error);
+		  }
+		});
+	  }
+	});
+  </script>
+
+  <!-- *******scripts para el funcionamiento del boton de ver menu Instrucciones/Opciones--------- -->
+        
+  <script>
+	document.addEventListener("DOMContentLoaded", function() {
+	  // Obtener referencias a los elementos del DOM
+	  var verMenuBtn = document.getElementById("ver-menu-btn");
+	  var menuContainer = document.getElementById("menu-container");
+  
+	  // Variable de estado para controlar la visibilidad del menú Opciones
+	  var menuVisible = false;
+  
+	  // Agregar un event listener para el botón "Ver menú"
+	  verMenuBtn.addEventListener("click", function() {
+		// Alternar la visibilidad del menú
+		if (menuVisible) {
+		  menuContainer.style.display = "none";
+		  menuVisible = false;
+		} else {
+		  menuContainer.style.display = "block";
+		  menuVisible = true;
+		}
+	  });
+	});
+  </script>
+  
+  <!-- scripts para el funcionamiento del boton de Contacta con nosostros-->
+  <script>
+	document.addEventListener("DOMContentLoaded", function() {
+	  // Obtener referencia al botón "Ver menú"
+	  var verMenuBtn = document.getElementById("ver-contac-us");
+  
+	  // Agregar un event listener al botón "Ver menú"
+	  verMenuBtn.addEventListener("click", function() {
+		// Obtener referencia al footer
+		var footer = document.getElementById("footer");
+		// Hacer scroll hasta el footer
+		footer.scrollIntoView({ behavior: 'smooth' });
+	  });
+	});
+  </script>
+  
+  
+  
+  <!-- ******Fin de scripts------ -->
+
+
+
+</body>
+
+</html>
