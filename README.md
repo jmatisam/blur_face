@@ -21,7 +21,7 @@ The documentation is inside the repository, in a PDF. ;)
 
 ----------------------------------------------------------------------------------------------------------------------------
 
-panish
+
 Aplicación Flask para Gestión de Fotos
 Esta aplicación Flask permite a los usuarios subir, ver, eliminar y descargar fotos.
 Asegura que solo se permitan archivos con extensiones válidas (.jpg, .jpeg, .png).
