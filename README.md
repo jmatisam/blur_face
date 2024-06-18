@@ -17,9 +17,7 @@ Upload new photos using the upload form.
 Delete photos by clicking the delete button next to each photo.
 Download photos by clicking the download button next to each photo.
 
-## Los puntos Claves:
-![ptos Clave](https://github.com/jmatisam/blur_face/blob/main/3.png)
-
+## Key Points
 
 
 The documentation is inside the repository, in a PDF. ;) and
