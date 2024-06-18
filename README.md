@@ -18,7 +18,7 @@ Delete photos by clicking the delete button next to each photo.
 Download photos by clicking the download button next to each photo.
 
 ## Key Points
-
+|[KEY POINTS](3.PNG)
 
 The documentation is inside the repository, in a PDF. ;) and
 * [Documentación](https://www.canva.com/design/DAGAzb8M2ag/skWm-5wgaV8xs4XlyAvGwA/view?utm_content=DAGAzb8M2ag&utm_campaign=designshare&utm_medium=link&utm_source=editor)
