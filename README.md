@@ -18,7 +18,7 @@ Delete photos by clicking the delete button next to each photo.
 Download photos by clicking the download button next to each photo.
 
 ## Los puntos Claves:
-![ptos Clave]()
+![ptos Clave](https://github.com/jmatisam/blur_face/edit/main/README.md)
 
 
 
