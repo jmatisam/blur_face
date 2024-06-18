@@ -24,6 +24,9 @@ Download photos by clicking the download button next to each photo.
 ![key](4.png)
 MTCNN is a face detection algorithm that uses a cascade convolutional neural network to perform multiple tasks related to face detection. It was proposed by Zhang et al. in 2016 and has become one of the most popular and effective techniques for detecting faces in images.
 
+tHE wEB iNTERFACE
+![key](7.png)
+
 
 The documentation is inside the repository, in a PDF. ;) and
 * [Documentación](https://www.canva.com/design/DAGAzb8M2ag/skWm-5wgaV8xs4XlyAvGwA/view?utm_content=DAGAzb8M2ag&utm_campaign=designshare&utm_medium=link&utm_source=editor)
